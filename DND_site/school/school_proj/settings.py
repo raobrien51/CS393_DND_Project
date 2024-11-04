@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'school_proj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'school',
+        'NAME': 'dnd',
         'USER': 'django',
         'PASSWORD': 'mysecretpassword',
         'HOST': 'localhost',

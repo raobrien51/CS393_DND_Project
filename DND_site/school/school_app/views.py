@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Course, Student, Enrollment
-from .forms import EnrollmentForm
+from .models import Character_Class
 from django.utils import timezone
 from django.http import Http404
 
@@ -8,7 +7,12 @@ from django.http import Http404
 def index(request):
     return render(request, "school_app/main.html")
 
-def course_list(request):
+def character_list(request):
+    data = Character_Class.objects.all()
+    context = {'Characters': data}
+    return render(request, "school_app/character_list.html", context)
+
+"""def course_list(request):
     data = Course.objects.all()
     context = {'courses': data}
     return render(request, "school_app/course_list.html", context)
@@ -55,4 +59,4 @@ def enroll_student(request):
             return redirect('enroll_student')
     else:
         form = EnrollmentForm()
-        return render(request, "school_app/enrollment_form.html", {"form": form})
+        return render(request, "school_app/enrollment_form.html", {"form": form})"""

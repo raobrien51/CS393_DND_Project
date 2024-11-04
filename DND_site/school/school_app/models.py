@@ -3,20 +3,25 @@ from django.db import models
 # Create your models here.
 from django.db import models
 
-class Student(models.Model):
-    student_id = models.AutoField(primary_key=True)
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    date_of_birth = models.DateField()
-    email = models.EmailField(unique=True)
+class Character_Class(models.Model):
+    charatcer_id = models.AutoField(primary_key=True)
+    character_name = models.CharField(max_length=255)
+    STR = models.IntegerField()
+    DEX = models.IntegerField()
+    CON = models.IntegerField()
+    INTE = models.IntegerField()
+    WIS = models.IntegerField()
+    CHA = models.IntegerField()
+    #BackgroundID FK
+    #RaceID FK
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return f"{self.character_name}"
     
     class Meta:
-        db_table = "Students"
+        db_table = "Character_Class"
 
-class Teacher(models.Model):
+"""class Teacher(models.Model):
     teacher_id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
@@ -53,3 +58,4 @@ class Enrollment(models.Model):
     class Meta:
         unique_together = ('student', 'course')
         db_table = "Enrollments"
+        """
