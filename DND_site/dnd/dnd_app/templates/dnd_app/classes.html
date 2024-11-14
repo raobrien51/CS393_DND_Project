@@ -1,0 +1,36 @@
+{% extends "dnd_app/main.html" %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class List</title>
+</head>
+<body>
+    <h1>Class List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Class Name</th>
+                <th>Description</th>
+                <th>Hit Dice</th>
+                <th>Saving Throw 1</th>
+                <th>Saving Throw 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cls in classes %}
+            <tr>
+                <td>{{ cls.className }}</td>
+                <td>{{ cls.descript }}</td>
+                <td>{{ cls.hitDice }}</td>
+                <td>{{ cls.savingThrowOne }}</td>
+                <td>{{ cls.savingThrowTwo }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+{% endblock %}

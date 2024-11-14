@@ -46,7 +46,7 @@ class Tool(models.Model):
     class Meta:
         db_table = "Tools"
 
-class Class(models.Model):
+class Classes(models.Model):
     className = models.CharField(max_length=10, primary_key=True)
     descript = models.TextField()
     hitDice = models.CharField(max_length=4)
@@ -61,7 +61,7 @@ class Class(models.Model):
 
 class SkillsbyClass(models.Model):
     skill = models.ForeignKey(Skill, on_delete=models.CASCADE)
-    className = models.ForeignKey(Class, on_delete=models.CASCADE)
+    className = models.ForeignKey(Classes, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.className} - {self.skill}"
@@ -71,7 +71,7 @@ class SkillsbyClass(models.Model):
 
 class WpnTypeByClass(models.Model):
     wpn = models.ForeignKey(WpnType, on_delete=models.CASCADE)
-    className = models.ForeignKey(Class, on_delete=models.CASCADE)
+    className = models.ForeignKey(Classes, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.className} - {self.wpn}"
@@ -81,7 +81,7 @@ class WpnTypeByClass(models.Model):
 
 class ToolByClass(models.Model):
     tool = models.ForeignKey(Tool, on_delete=models.CASCADE)
-    className = models.ForeignKey(Class, on_delete=models.CASCADE)
+    className = models.ForeignKey(Classes, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.className} - {self.tool}"
@@ -90,8 +90,9 @@ class ToolByClass(models.Model):
         db_table = "ToolbyClass"
 
 class ClassByLvl(models.Model):
-    className = models.ForeignKey(Class, on_delete=models.CASCADE)
+    className = models.ForeignKey(Classes, on_delete=models.CASCADE)
     lvl = models.IntegerField()
+    AbilityName = models.CharField(max_length=100)
     Ability = models.TextField(default="Feat")
 
     def __str__(self):
@@ -102,7 +103,7 @@ class ClassByLvl(models.Model):
 
 class CharacterByLevel(models.Model):
     character = models.ForeignKey(Character_Class, on_delete=models.CASCADE)
-    className = models.ForeignKey(Class, on_delete=models.CASCADE)
+    className = models.ForeignKey(Classes, on_delete=models.CASCADE)
     descript = models.TextField()
     abilityName = models.CharField(max_length=50)
     lvl = models.IntegerField()
@@ -123,7 +124,7 @@ class CharacterByLevel(models.Model):
         db_table = "CharacterByLevel"
 
 class Subclass(models.Model):
-    className = models.ForeignKey(Class, on_delete=models.CASCADE)
+    className = models.ForeignKey(Classes, on_delete=models.CASCADE)
     subclass_name = models.CharField(max_length=30)
     descript = models.TextField()
 
@@ -157,7 +158,7 @@ class Spell(models.Model):
 
 class WhoCanCast(models.Model):
     spell = models.ForeignKey(Spell, on_delete=models.CASCADE)
-    className = models.ForeignKey(Class, on_delete=models.CASCADE)
+    className = models.ForeignKey(Classes, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.className} can cast {self.spell}"
