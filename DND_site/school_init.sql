@@ -25,7 +25,7 @@ CREATE TABLE WpnType (
 );
 CREATE TABLE Tools (
     tool_id INT AUTO_INCREMENT PRIMARY KEY,
-    toolName VARCHAR(15)
+    toolName VARCHAR(50)
 );
 
 CREATE TABLE Class (
@@ -277,3 +277,186 @@ VALUES
     ('Medium Armor'),    
     ('Heavy Armor'),     
     ('Shield');
+
+-- Artificer Class Proficiencies
+INSERT INTO wpnTypebyClass (wpn_id, className) VALUES
+(2, 'Artificer'), -- Simple Weapons
+(1, 'Artificer'), -- Martial Weapons
+(3, 'Artificer'), -- Light Armor
+(6, 'Artificer'); -- Shield
+
+-- Barbarian Class Proficiencies
+INSERT INTO wpnTypebyClass (wpn_id, className) VALUES
+(1, 'Barbarian'), -- Martial Weapons
+(2, 'Barbarian'), -- Simple Weapons
+(3, 'Barbarian'), -- Light Armor
+(4, 'Barbarian'), -- Medium Armor
+(6, 'Barbarian'); -- Shield
+
+-- Bard Class Proficiencies
+INSERT INTO wpnTypebyClass (wpn_id, className) VALUES
+(2, 'Bard'), -- Simple Weapons
+(1, 'Bard'), -- Martial Weapons
+(3, 'Bard'), -- Light Armor
+(6, 'Bard'); -- Shield
+
+-- Cleric Class Proficiencies
+INSERT INTO wpnTypebyClass (wpn_id, className) VALUES
+(2, 'Cleric'), -- Simple Weapons
+(3, 'Cleric'), -- Light Armor
+(4, 'Cleric'), -- Medium Armor
+(6, 'Cleric'); -- Shield
+
+-- Druid Class Proficiencies
+INSERT INTO wpnTypebyClass (wpn_id, className) VALUES
+(2, 'Druid'), -- Simple Weapons
+(3, 'Druid'), -- Light Armor
+(4, 'Druid'), -- Medium Armor
+(6, 'Druid'); -- Shield
+
+-- Fighter Class Proficiencies
+INSERT INTO wpnTypebyClass (wpn_id, className) VALUES
+(1, 'Fighter'), -- Martial Weapons
+(2, 'Fighter'), -- Simple Weapons
+(3, 'Fighter'), -- Light Armor
+(4, 'Fighter'), -- Medium Armor
+(5, 'Fighter'), -- Heavy Armor
+(6, 'Fighter'); -- Shield
+
+-- Monk Class Proficiencies
+INSERT INTO wpnTypebyClass (wpn_id, className) VALUES
+(2, 'Monk'), -- Simple Weapons
+(1, 'Monk'), -- Martial Weapons
+(3, 'Monk'); -- Light Armor
+
+-- Paladin Class Proficiencies
+INSERT INTO wpnTypebyClass (wpn_id, className) VALUES
+(1, 'Paladin'), -- Martial Weapons
+(2, 'Paladin'), -- Simple Weapons
+(3, 'Paladin'), -- Light Armor
+(4, 'Paladin'), -- Medium Armor
+(5, 'Paladin'), -- Heavy Armor
+(6, 'Paladin'); -- Shield
+
+-- Ranger Class Proficiencies
+INSERT INTO wpnTypebyClass (wpn_id, className) VALUES
+(1, 'Ranger'), -- Martial Weapons
+(2, 'Ranger'), -- Simple Weapons
+(3, 'Ranger'), -- Light Armor
+(4, 'Ranger'), -- Medium Armor
+(6, 'Ranger'); -- Shield
+
+-- Rogue Class Proficiencies
+INSERT INTO wpnTypebyClass (wpn_id, className) VALUES
+(2, 'Rogue'), -- Simple Weapons
+(1, 'Rogue'), -- Martial Weapons
+(3, 'Rogue'); -- Light Armor
+
+-- Sorcerer Class Proficiencies
+INSERT INTO wpnTypebyClass (wpn_id, className) VALUES
+(2, 'Sorcerer'), -- Simple Weapons
+(3, 'Sorcerer'); -- Light Armor
+
+-- Warlock Class Proficiencies
+INSERT INTO wpnTypebyClass (wpn_id, className) VALUES
+(2, 'Warlock'), -- Simple Weapons
+(3, 'Warlock'); -- Light Armor
+
+-- Wizard Class Proficiencies
+INSERT INTO wpnTypebyClass (wpn_id, className) VALUES
+(2, 'Wizard'), -- Simple Weapons
+(3, 'Warlock'); -- Light Armor
+INSERT INTO Tools (toolName) 
+VALUES
+    ('Alchemist’s Supplies'),
+    ('Brewer’s Supplies'),
+    ('Calligrapher’s Supplies'),
+    ('Carpenter’s Tools'),
+    ('Cobbler’s Tools'),
+    ('Cook’s Utensils'),
+    ('Glassblower’s Tools'),
+    ('Herbalism Kit'),
+    ('Jeweler’s Tools'),
+    ('Leatherworker’s Tools'),
+    ('Mason’s Tools'),
+    ('Painter’s Supplies'),
+    ('Smith’s Tools'),
+    ('Tinker’s Tools'),
+    ('Weaver’s Tools'),
+    ('Woodcarver’s Tools'),
+    ('Musical Instrument');
+
+
+INSERT INTO ToolbyClass (tool_id, className) 
+VALUES
+    -- Artificer
+    (1, 'Artificer'), -- Alchemist’s Supplies
+    (15, 'Artificer'), -- Tinker’s Tools
+    (16, 'Artificer'), -- Woodcarver’s Tools
+    -- Bard
+    (1, 'Bard'), -- Alchemist’s Supplies
+    (2, 'Bard'), -- Brewer’s Supplies
+    (3, 'Bard'), -- Calligrapher’s Supplies
+    (4, 'Bard'), -- Carpenter’s Tools
+    (5, 'Bard'), -- Cobbler’s Tools
+    (6, 'Bard'), -- Cook’s Utensils
+    (7, 'Bard'), -- Glassblower’s Tools
+    (8, 'Bard'), -- Herbalism Kit
+    (9, 'Bard'), -- Jeweler’s Tools
+    (10, 'Bard'), -- Leatherworker’s Tools
+    (11, 'Bard'), -- Mason’s Tools
+    (12, 'Bard'), -- Painter’s Supplies
+    (13, 'Bard'), -- Smith’s Tools
+    (14, 'Bard'), -- Tinker’s Tools
+    (15, 'Bard'), -- Weaver’s Tools
+    (16, 'Bard'), -- Woodcarver’s Tools
+    (17, 'Bard'), -- Musical Instrument
+
+    -- Barbarian
+    (4, 'Barbarian'), -- Carpenter’s Tools
+    (5, 'Barbarian'), -- Cobbler’s Tools
+    (13, 'Barbarian'), -- Smith’s Tools
+
+    -- Cleric
+    (2, 'Cleric'), -- Brewer’s Supplies
+    (3, 'Cleric'), -- Calligrapher’s Supplies
+    (6, 'Cleric'), -- Cook’s Utensils
+    (9, 'Cleric'), -- Jeweler’s Tools
+    (10, 'Cleric'), -- Leatherworker’s Tools
+    (17, 'Cleric'), -- Musical Instrument
+
+    -- Druid
+    (8, 'Druid'), -- Herbalism Kit
+    (6, 'Druid'), -- Cook’s Utensils
+    (17, 'Druid'), -- Musical Instrument
+
+    -- Fighter
+    (4, 'Fighter'), -- Carpenter’s Tools
+    (5, 'Fighter'), -- Cobbler’s Tools
+    (12, 'Fighter'), -- Painter’s Supplies
+    (13, 'Fighter'), -- Smith’s Tools
+
+    -- Monk
+    (6, 'Monk'), -- Cook’s Utensils
+    (17, 'Monk'), -- Musical Instrument
+
+    -- Paladin
+    (4, 'Paladin'), -- Carpenter’s Tools
+    (5, 'Paladin'), -- Cobbler’s Tools
+    (13, 'Paladin'), -- Smith’s Tools
+
+    -- Ranger
+    (8, 'Ranger'), -- Herbalism Kit
+    (6, 'Ranger'), -- Cook’s Utensils
+
+    -- Rogue
+    (13, 'Rogue'), -- Smith’s Tools
+    (17, 'Rogue'), -- Musical Instrument
+
+    -- Sorcerer
+    (2, 'Sorcerer'), -- Brewer’s Supplies
+    (3, 'Sorcerer'), -- Calligrapher’s Supplies
+
+    -- Warlock
+    (2, 'Warlock'), -- Brewer’s Supplies
+    (3, 'Warlock'); -- Calligrapher’s Supplies
