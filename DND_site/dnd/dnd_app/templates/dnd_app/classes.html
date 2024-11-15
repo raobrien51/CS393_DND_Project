@@ -19,13 +19,13 @@
             </tr>
         </thead>
         <tbody>
-            {% for cls in classes %}
+            {% for c in Classes %}
             <tr>
-                <td>{{ cls.className }}</td>
-                <td>{{ cls.descript }}</td>
-                <td>{{ cls.hitDice }}</td>
-                <td>{{ cls.savingThrowOne }}</td>
-                <td>{{ cls.savingThrowTwo }}</td>
+                <td>{{ c.className }}</td>
+                <td>{{ c.descript }}</td>
+                <td>{{ c.hitDice }}</td>
+                <td>{{ c.savingThrowOne }}</td>
+                <td>{{ c.savingThrowTwo }}</td>
             </tr>
             {% endfor %}
         </tbody>

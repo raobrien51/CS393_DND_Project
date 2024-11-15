@@ -54,10 +54,10 @@ class Classes(models.Model):
     savingThrowTwo = models.CharField(max_length=3)
 
     def __str__(self):
-        return self.className
+        return f"{self.className}"
 
     class Meta:
-        db_table = "Class"
+        db_table = "Classes"
 
 class SkillsbyClass(models.Model):
     skill = models.ForeignKey(Skill, on_delete=models.CASCADE)
