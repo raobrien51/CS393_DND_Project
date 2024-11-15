@@ -92,7 +92,6 @@ class ToolByClass(models.Model):
 class ClassByLvl(models.Model):
     className = models.ForeignKey(Classes, on_delete=models.CASCADE)
     lvl = models.IntegerField()
-    AbilityName = models.CharField(max_length=100)
     Ability = models.TextField(default="Feat")
 
     def __str__(self):
@@ -179,6 +178,7 @@ class CurrentSpellsForCharacter(models.Model):
 class Feat(models.Model):
     featName = models.CharField(max_length=50)
     descript = models.TextField()
+    lvlReq = models.IntegerField()
 
     def __str__(self):
         return self.featName
@@ -197,7 +197,7 @@ class CharacterByFeat(models.Model):
         db_table = "CharacterByFeat"
 
 class Race(models.Model):
-    race_name = models.CharField(max_length=10)
+    race_name = models.CharField(max_length=20)
     descript = models.TextField()
     speed = models.IntegerField()
     size = models.CharField(max_length=15)
