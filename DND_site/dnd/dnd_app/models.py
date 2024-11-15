@@ -220,6 +220,7 @@ class AbilityByRace(models.Model):
         db_table = "AbilityByRace"
 
 class Background(models.Model):
+    backgroundName = models.CharField(max_length=25)
     abilitiesImprovedOne = models.CharField(max_length=3)
     abilitiesImprovedTwo = models.CharField(max_length=3)
     abilitiesImprovedThree = models.CharField(max_length=3)
