@@ -694,4 +694,163 @@ VALUES
 ('Paladin', 19, 'Epic Boon', 'You gain an Epic Boon feat or another feat of your choice.'),
 ('Paladin', 20, 'Paladin Subclass Feature', 'Subclass feature at level 20.');
 
+-- Ranger 
+INSERT INTO ClassByLvl (ClassName, lvl, AbilityName, Ability)
+VALUES
+    ('Ranger', 1, 'Spellcasting', 'You have learned to channel the magical essence of nature to cast spells. See the Player’s Handbook for the rules on spellcasting. The information below details how you use those rules with Ranger spells. Spell Slots. The Ranger table shows how many spell slots you have to cast your level 1+ spells. You regain all expended spell slots when you finish a Long Rest. Prepared Spells of Level 1+. You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose two level 1 spells from the Ranger spell list. Cure Wounds and Ensnaring Strike are recommended. The number of spells on your list increases as you gain Ranger levels, as shown in the Prepared Spells column of the Ranger table. Whenever that number increases, choose additional spells from the Ranger spell list until the number of spells on your list matches the number on the table. The chosen spells must be of a level for which you have spell slots. For example, if you’re a level 5 Ranger, your list of prepared spells can include six Ranger spells of 1st or 2nd level, in any combination. If another Ranger feature gives spells that you always have prepared, those spells don’t count against the number of spells on the list you prepare with this feature, but those spells otherwise count as Ranger spells for you. Changing Your Prepared Spells. Whenever you finish a Long Rest, you can replace one spell on your list with another Ranger spell for which you have spell slots. Spellcasting Ability. Wisdom is your Spellcasting Ability for your Ranger spells. Spellcasting Focus. You can use a Druidic Focus as a Spellcasting Focus for the spells you prepare for this class.'),
+
+    ('Ranger', 1, 'Deft Explorer', 'Thanks to your travels, you gain the following benefits: Expertise. Choose one of your proficiencies with which you lack Expertise. You gain Expertise in that skill. Languages. You know two languages of your choice from the language tables.'),
+
+    ('Ranger', 1, 'Weapon Mastery', 'Your training with weapons allows you to use the Mastery property of two kinds of weapons of your choice with which you have proficiency, such as Longbows and Longswords. Whenever you finish a Long Rest, you can change the kinds of weapons you chose. For example, you could switch to using the Mastery properties of Scimitars and Shortswords.'),
+
+    ('Ranger', 1, 'Favored Enemy', 'You always have the Hunter’s Mark spell prepared. You can cast it a number of times equal to your Proficiency Bonus without expending a spell slot, and you regain all expended uses of this ability when you finish a Long Rest.'),
+
+    ('Ranger', 2, 'Fighting Style', 'You gain a Fighting Style feat of your choice. Instead of choosing one of those feats, you can choose the option below: Druidic Warrior. You learn two Druid cantrips of your choice. Guidance and Starry Wisp are recommended. The chosen cantrips count as Ranger spells for you, and Wisdom is your spellcasting ability for them. Whenever you gain a Ranger level, you can replace one of these cantrips with another Druid cantrip.'),
+
+    ('Ranger', 3, 'Ranger Subclass', 'You gain a Ranger subclass of your choice: Beast Master, Fey Wanderer, Gloom Stalker, Hunter, Horizon Walker (Non-Playtest), Monster Slayer (Non-Playtest), Swarmkeeper (Non-Playtest), Drakewarden (Non-Playtest). Subclasses are detailed after this class’s description. A subclass is a specialization that grants you special abilities at certain Ranger levels. For the rest of your career, you gain each of your subclass’s features that are of your Ranger level and lower. There are non-playtest subclasses that can be used, please check with your DM before using one.'),
+
+    ('Ranger', 4, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify. As shown on the Ranger table, you gain this feature again at levels 8, 12, 16.'),
+    ('Ranger', 8, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify. As shown on the Ranger table, you gain this feature again at levels 8, 12, 16.'),
+    ('Ranger', 12, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify. As shown on the Ranger table, you gain this feature again at levels 8, 12, 16.'),
+    ('Ranger', 16, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify. As shown on the Ranger table, you gain this feature again at levels 8, 12, 16.'),
+    ('Ranger', 5, 'Extra Attack', 'You can attack twice, instead of once, whenever you take the Attack action on your turn.'),
+
+    ('Ranger', 6, 'Roving', 'Your Speed increases by 10 feet while you aren’t wearing Heavy Armor. You also have a Climb Speed and a Swim Speed equal to your Speed.'),
+
+    ('Ranger', 9, 'Expertise', 'Choose two of your skill proficiencies with which you lack Expertise. You gain Expertise in those skills.'),
+
+    ('Ranger', 10, 'Tireless', 'Primal forces now help fuel you on your journeys, granting you the following benefits: Temporary Hit Points. As a Magic action, you can give yourself a number of Temporary Hit Points equal to 1d8 + your Wisdom modifier (minimum of 1). You can use this action a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a Long Rest. Decrease Exhaustion. Whenever you finish a Short Rest, your Exhaustion level, if any, decreases by 1.'),
+
+    ('Ranger', 13, 'Relentless Hunter', 'Taking damage can\'t break your Concentration on Hunter\'s Mark.'),
+
+    ('Ranger', 14, 'Nature’s Veil', 'You invoke spirits of nature to magically hide yourself. As a Bonus Action, you can give yourself the Invisible condition until the end of your next turn. You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.'),
+
+    ('Ranger', 17, 'Precise Hunter', 'You have Advantage on attack rolls against the creature currently marked by your Hunter\'s Mark.'),
+
+    ('Ranger', 18, 'Feral Senses', 'Your connection to the forces of nature grants you Blindsight with a range of 30 feet.'),
+
+    ('Ranger', 19, 'Epic Boon', 'You gain an Epic Boon feat or another feat of your choice for which you qualify. Boon of Dimensional Travel is recommended.'),
+
+    ('Ranger', 20, 'Foe Slayer', 'The damage die of your Hunter\'s Mark is a d10 rather than a d6.'),
+    ('Ranger', 7, 'Subclass Feature', 'At 7th level, your subclass grants a new feature specific to your chosen subclass.'),
+
+    ('Ranger', 11, 'Subclass Feature', 'At 11th level, your subclass grants a new feature specific to your chosen subclass.'),
+
+    ('Ranger', 15, 'Subclass Feature', 'At 15th level, your subclass grants a new feature specific to your chosen subclass.');
+-- Rogue
+INSERT INTO ClassByLvl (ClassName, lvl, AbilityName, Ability)
+VALUES
+    ('Rogue', 1, 'Expertise', 'You gain Expertise in two of your skill proficiencies of your choice.'),
+    ('Rogue', 1, 'Sneak Attack', 'Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack roll if you have Advantage on the roll and the attack uses a Finesse or Ranged weapon. The extra damage increases as you gain Rogue levels.'),
+    ('Rogue', 1, 'Thieves Cant', 'You know Thieves Cant and one other language of your choice from the language tables.'),
+    ('Rogue', 1, 'Weapon Mastery', 'You can use the Mastery property of two kinds of weapons of your choice with which you have proficiency.'),
+    ('Rogue', 2, 'Cunning Action', 'On your turn, you can take one of the following actions as a Bonus Action: Dash, Disengage or Hide.'),
+    ('Rogue', 3, 'Rogue Subclass', 'At 3rd level, you gain a Rogue subclass of your choice (e.g., Arcane Trickster, Assassin). Subclasses grant unique features that enhance your Rogue abilities.'),
+    ('Rogue', 3, 'Steady Aim', 'As a Bonus Action, you give yourself Advantage on your next attack roll on the current turn. You can use this feature only if you haven’t moved during this turn, and after you use it, your Speed is 0 until the end of the current turn.'),
+    ('Rogue', 4, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Rogue', 5, 'Cunning Strike', 'You can add Cunning Strike effects to your Sneak Attack, including Poison, Trip, or Withdraw, with associated die costs.'),
+    ('Rogue', 5, 'Uncanny Dodge', 'You can use your Reaction to halve the damage from an attack that you can see.'),
+    ('Rogue', 6, 'Expertise', 'You gain Expertise in two of your skill proficiencies of your choice.'),
+    ('Rogue', 7, 'Evasion', 'When subjected to an effect that allows a Dexterity saving throw for half damage, you take no damage if you succeed and half damage if you fail.'),
+    ('Rogue', 7, 'Reliable Talent', 'You can treat any d20 roll of 9 or lower as a 10 when making ability checks with skill or tool proficiencies.'),
+    ('Rogue', 8, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Rogue', 9, 'Improved Cunning Strike', 'You can use up to two Cunning Strike effects when you deal Sneak Attack damage, each with their own die cost.'),
+    ('Rogue', 10, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Rogue', 11, 'Improved Cunning Strike', 'You can add Cunning Strike effects to your Sneak Attack, including Poison, Trip, or Withdraw, with associated die costs.'),
+    ('Rogue', 12, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Rogue', 13, 'Subclass Feature', 'At 13th level, your subclass grants an additional feature, enhancing your skills and abilities.'),
+    ('Rogue', 13, 'Slippery Mind', 'You gain proficiency in Wisdom and Charisma saving throws.'),
+    ('Rogue', 14, 'Devious Strikes', 'New Cunning Strike effects like Daze, Knock Out, and Obscure become available, each with higher die costs and saving throws.'),
+    ('Rogue', 15, 'Slippery Mind', 'Your cunning mind is exceptionally difficult to control. You gain proficiency in Wisdom and Charisma saving throws.'),
+    ('Rogue', 16, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Rogue', 17, 'Subclass Feature', 'At 17th level, your subclass grants an additional feature, significantly enhancing your Rogue capabilities.'),
+    ('Rogue', 17, 'Elusive', 'No attack roll can have Advantage against you unless you have the Incapacitated condition.'),
+    ('Rogue', 18, 'Elusive', 'No attack roll can have Advantage against you unless you have the Incapacitated condition.'),
+    ('Rogue', 19, 'Epic Boon', 'You gain an Epic Boon feat or another feat of your choice for which you qualify. Boon of Combat Prowess is recommended.'),
+    ('Rogue', 20, 'Stroke of Luck', 'You can turn a failed D20 roll into a 20 once per Short or Long Rest.');
+    -- Sorcerer
+INSERT INTO ClassByLvl (ClassName, lvl, AbilityName, Ability)
+VALUES
+    ('Sorcerer', 1, 'Expertise', 'An event in your past left an indelible mark on you, infusing you with a simmering magic. As a Bonus Action, you can unleash that magic for 1 minute, during which you gain the following benefits:
+    The spell save DC of your Sorcerer spells increases by 1.
+    You have Advantage on the attack rolls of Sorcerer spells you cast.
+    You can use this feature twice, and you regain all expended uses of it when you finish a Long Rest.'),
+    ('Sorcerer', 1, 'SPELLCASTING', 'As a Sorcerer, you can cast spells using Charisma as your spellcasting ability. You start with four cantrips and two 1st-level spells, which you can change when you level up. You gain additional cantrips at levels 4 and 10. You prepare spells from your available spell slots, and the number of spells you can prepare increases as you level. You can also change one spell each time you gain a Sorcerer level. You can use an Arcane Focus as your spellcasting focus.'),
+    ('Sorcerer', 2, 'FONT OF MAGIC', 'You can tap into the wellspring of magic within yourself. This wellspring is represented by Sorcery Points, which allow you to create a variety of magical effects. You have 2 Sorcery Points, and you gain more as you reach higher levels, as shown in the Sorcery Points column of the Sorcerer table. You can never have more Sorcery Points than the number shown on the table for your level. You regain all spent Sorcery Points when you finish a Long Rest. You can use your Sorcery Points to fuel the options below, along with other features, such as Metamagic, that use those points.
+    Converting Spell Slots to Sorcery Points. You can expend a spell slot to gain a number of Sorcery Points equal to the slots level (no action required).
+    Creating Spell Slots. As a Bonus Action, you can transform unexpended Sorcery Points into one spell slot. The Creating Spell Slots table shows the cost of creating a spell slot of a given level, and it lists the minimum Sorcerer level you must be to create a slot. You can create a spell slot no higher in level than 5. Any spell slot you create with this feature vanishes when you finish a Long Rest.'),
+    ('Sorcerer', 2, 'METAMAGIC', 'You gain two Metamagic options of your choice from the Metamagic Options. You use the chosen options to temporarily modify spells you cast. To use an option, you must spend the number of Sorcery Points that it costs. You can use only one Metamagic option on a spell when you cast it, unless otherwise noted in one of those options. Whenever you gain a Sorcerer level, you can replace one of your Metamagic options with one you don’t know. You gain two more options at Sorcerer level 10 and two more at Sorcerer level 17.'),
+    ('Sorcerer', 3, '', 'You gain a Sorcerer subclass of your choice:
+    Aberrant Sorcery
+    Clockwork Sorcery
+    Draconic Sorcery
+    Wild Magic Sorcery
+    A subclass is a specialization that grants you special features at certain Sorcerer levels. For the rest of your career, you gain each of your subclass features that are of your Sorcerer level and lower.'),
+    ('Sorcerer', 4, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Sorcerer', 8, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Sorcerer', 12, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Sorcerer', 16, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Sorcerer', 5, 'Sorcerous Restoration', 'When you finish a Short Rest, you can regain expended Sorcery Points, but no more than a number equal to half your Sorcerer level (round down). Once you use this feature, you can\'t do so again until you finish a Long Rest.'),
+    ('Sorcerer', 7, 'Sorcery Incarnate', 'If you have no uses of Innate Sorcery left, you can use it if you spend 2 Sorcery Points when you take the Bonus Action to activate it. In addition, while your Innate Sorcery feature is active, you can use up to two of your Metamagic Options on each spell you cast.'),
+    ('Sorcerer', 19, 'Epic Boon', 'You gain an Epic Boon feat or another feat of your choice for which you qualify. Boon of Fate is recommended.'),
+    ('Sorcerer', 20, 'Arcane Apotheosis', 'While your Innate Sorcery feature is active, you can use one Metamagic Option on each of your turns without expending Sorcery Points on it.'),
+    ('Sorcerer', 6, 'Subclass Feature', 'Description of your subclass feature at level 6.'),
+    ('Sorcerer', 14, 'Subclass Feature', 'Description of your subclass feature at level 14.'),
+    ('Sorcerer', 18, 'Subclass Feature', 'Description of your subclass feature at level 18.'),
+    ('Sorcerer', 10, 'Metamagic', 'You gain two additional Metamagic options of your choice. You can replace one of your existing Metamagic options with another choice whenever you gain a Sorcerer level.'),
+    ('Sorcerer', 17, 'Metamagic', 'You gain two additional Metamagic options of your choice. You can replace one of your existing Metamagic options with another choice whenever you gain a Sorcerer level.'),
+    ('Sorcerer', 9, '-', '-'),
+    ('Sorcerer', 11, '-', '-'),
+    ('Sorcerer', 13, '-', '-'),
+    ('Sorcerer', 15, '-', '-'),
+    -- Warlock
+    ('Warlock', 1, 'ELDRITCH INVOCATIONS', 'You have unearthed Eldritch Invocations, pieces of forbidden knowledge that imbue you with an abiding magical ability or other lessons. You gain one invocation of your choice. If an invocation has a prerequisite, you must meet it to learn that invocation. Whenever you gain a Warlock level, you can replace one of your invocations with another one for which you qualify. You cant replace an invocation if its a prerequisite for another invocation that you have.'),
+    ('Warlock', 1, 'PACT MAGIC', 'Through occult ceremony, you have formed a pact with a mysterious entity to gain magical powers. The entity is a voice in the shadows—its identity unclear—but its boon to you is concrete: the ability to cast spells. You know two Warlock cantrips of your choice, such as Eldritch Blast and Prestidigitation. You gain additional cantrips and spells as you gain levels. You regain all expended Pact Magic spell slots when you finish a Short Rest or Long Rest.'),
+    ('Warlock', 2, 'MAGICAL CUNNING', 'You can perform an esoteric rite for 1 minute. At the end of it, you regain expended Pact Magic spell slots but no more than a number equal to half your maximum (round up). Once you use this feature, you cant do so again until you finish a Long Rest.'),
+    ('Warlock', 3, 'WARLOCK SUBCLASS', 'You gain a Warlock subclass of your choice: Archfey Patron, Celestial Patron, Fiend Patron, Great Old One Patron, Fathomless (Non-Playtest), Genie (Non-Playtest), Hexblade (Non-Playtest), or The Undead (Non-Playtest).'),
+    ('Warlock', 4, 'ABILITY SCORE IMPROVEMENT', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify. You gain this feature again at levels 8, 12, 16, and 19.'),
+    ('Warlock', 5, '-', '-'),
+    ('Warlock', 7, '-', '-'),
+    ('Warlock', 6, 'SubClass Feature', 'Description for level 6 subclass feature goes here.'),
+    ('Warlock', 8, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Warlock', 9, 'CONTACT PATRON', 'You can communicate directly with your patron; you always have the Contact Other Plane spell prepared. You can cast the spell without expending a spell slot, and you automatically succeed on the spell’s saving throw. Once you cast the spell, you can’t do so again until you finish a Long Rest.'),
+    ('Warlock', 10, 'SubClass Feature', 'Description for level 10 subclass feature goes here.'),
+    ('Warlock', 11, 'MYSTIC ARCANUM', 'Your patron grants you a magical secret called an arcanum. Choose one level 6 spell from the Warlock spell list. You can cast this spell once without expending a spell slot, and you regain the ability to do so after a Long Rest. You gain more arcanum spells at levels 13, 15, and 17.'),
+    ('Warlock', 12, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Warlock', 13, 'Mystic Arcanum', 'Your patron grants you a magical secret called an arcanum. Choose one level 7 spell from the Warlock spell list as this arcanum. You can cast your arcanum spell once without expending a spell slot, and you must finish a Long Rest before you can do so again.'),
+    ('Warlock', 14, 'SubClass Feature', 'Description for level 14 subclass feature goes here.'),
+    ('Warlock', 15, 'Mystic Arcanum', 'Your patron grants you a magical secret called an arcanum. Choose one level 8 spell from the Warlock spell list as this arcanum. You can cast your arcanum spell once without expending a spell slot, and you must finish a Long Rest before you can do so again.'),
+    ('Warlock', 16, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Warlock', 17, 'Mystic Arcanum', 'Your patron grants you a magical secret called an arcanum. Choose one level 9 spell from the Warlock spell list as this arcanum. You can cast your arcanum spell once without expending a spell slot, and you must finish a Long Rest before you can do so again.'),
+    ('Warlock', 18, '-', '-'),
+    ('Warlock', 19, 'EPIC BOON', 'You gain an Epic Boon feat or another feat of your choice for which you qualify. Boon of Fate is recommended.'),
+    ('Warlock', 20, 'ELDRITCH MASTER', 'When you use your Magical Cunning feature, you regain all your expended Pact Magic spell slots.'),
+    -- Wizard
+    ('Wizard', 1, 'SPELLCASTING (CANTRIPS)', 'You know three cantrips of your choice from the Wizard spell list. Light, Mage Hand, and Ray of Frost are recommended. You can replace one cantrip with another after finishing a Long Rest. At levels 4 and 10, you gain an additional cantrip of your choice.'),
+    ('Wizard', 1, 'SPELLCASTING (SPELLBOOK)', 'You possess a spellbook containing six 1st-level spells. You can add two more spells to your spellbook each time you level up, and can prepare a set number of spells each day. Your spellbook can be updated with new spells by finding them during your adventures.'),
+    ('Wizard', 1, 'RITUAL ADEPT', 'You can cast any spell with the Ritual tag that is in your spellbook as a Ritual without needing it prepared, but you must read from the book to cast it.'),
+    ('Wizard', 1, 'ARCANE RECOVERY', 'When you finish a Short Rest, you can recover expended spell slots of a combined level equal to or less than half your Wizard level.'),
+    ('Wizard', 2, 'SCHOLAR', 'Choose one skill in which you have proficiency: Arcana, History, Investigation, Medicine, Nature, or Religion. You gain Expertise in that skill.'),
+    ('Wizard', 3, 'WIZARD SUBCLASS', 'You gain a Wizard subclass of your choice, such as Abjurer, Diviner, Evoker, Illusionist, Bladesinger (Non-Playtest), Order of Scribes (Non-Playtest), or War Magic (Non-Playtest).'),
+    ('Wizard', 4, 'ABILITY SCORE IMPROVEMENT', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Wizard', 5, 'MEMORIZE SPELL', 'Whenever you finish a Short Rest, you can replace one of the level 1+ spells you have prepared with another spell from your spellbook.'),
+    ('Wizard', 18, 'SPELL MASTERY', 'Choose one level 1 spell and one level 2 spell from your spellbook that have a casting time of an action. You can cast them at will without expending a spell slot. You can replace one of them when you finish a Long Rest.'),
+    ('Wizard', 19, 'EPIC BOON', 'You gain an Epic Boon feat or another feat of your choice for which you qualify. Boon of Fate is recommended.'),
+    ('Wizard', 20, 'SIGNATURE SPELLS', 'Choose two level 3 spells from your spellbook as your signature spells. You can cast each of them once at level 3 without expending a spell slot, and you regain this ability after a Short Rest or Long Rest.'),
+    ('Wizard', 6, 'Subclass Feature', 'Description of level 6 subclass feature goes here.'),
+    ('Wizard', 10, 'Subclass Feature', 'Description of level 10 subclass feature goes here.'),
+    ('Wizard', 14, 'Subclass Feature', 'Description of level 14 subclass feature goes here.'),
+    ('Wizard', 8, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Wizard', 12, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Wizard', 16, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
+    ('Wizard', 7, '-', '-'),
+    ('Wizard', 9, '-', '-'),
+    ('Wizard', 11, '-', '-'),
+    ('Wizard', 13, '-', '-'),
+    ('Wizard', 15, '-', '-'),
+    ('Wizard', 17, '-', '-');
+
+
+
+
 
