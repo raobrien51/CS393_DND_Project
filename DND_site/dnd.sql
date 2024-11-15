@@ -102,7 +102,11 @@ Create TABLE Spell(
     SpellName VARCHAR(30),
     spellLvl INT,
     descript VARCHAR(1000)
+
+    
 );
+
+
 Create TABLE whoCanCast(
     spell_id INT,
     className VARCHAR(10),
@@ -169,6 +173,31 @@ VALUES
     ('Sorcerer', 'A spellcaster who draws on inherent magic from a gift or bloodline.', 'd6', 'CON', 'CHA'),
     ('Warlock', 'A wielder of magic that is derived from a bargain with an extraplanar entity.', 'd8', 'WIS', 'CHA'),
     ('Wizard', 'A scholarly magic-user capable of manipulating the structures of reality.', 'd6', 'INT', 'WIS');
+
+spell_id INT PRIMARY KEY AUTO_INCREMENT,
+    SpellName VARCHAR(30),
+    spellLvl INT,
+    descript VARCHAR(1000)
+
+INSERT INTO SPELLS (spell_id, SpellName, spellLvl, descript)
+VALUES 
+    ('id'Abi-Dalzim’s Horrid Wilting	8	Necromancy	1 Action	No	No	Elemental Evil
+
+    ('Artificer', 'A master of invention, using ingenuity and magic to unlock extraordinary abilities.', 'd8', 'INT', 'CON'),
+    ('Barbarian', 'A fierce warrior of primitive background who can enter a battle rage.', 'd12', 'STR', 'CON'),
+    ('Bard', 'A master of song, dance, and storytelling, Bards harness the magic of art to inspire their allies and manipulate the forces of magic. Through their performances, they channel their creativity into spells, bolster the courage of adventurers, and sway the hearts of enemies.', 'd8', 'DEX', 'CHA'),
+    ('Cleric', 'A priestly champion who wields divine magic in service of a higher power.', 'd8', 'WIS', 'CHA'),
+    ('Druid', 'A priest of the Old Faith, wielding the powers of nature and adopting animal forms.', 'd8', 'INT', 'WIS'),
+    ('Fighter', 'A master of martial combat, skilled with a variety of weapons and armor.', 'd10', 'STR', 'CON'),
+    ('Monk', 'A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.', 'd8', 'STR', 'DEX'),
+    ('Paladin', 'A holy warrior bound to a sacred oath, using divine magic to protect the weak and uphold justice.', 'd10', 'WIS', 'CHA'),
+    ('Ranger', 'A warrior who uses martial prowess and nature magic to protect the natural order', 'd10', 'DEX', 'WIS'),
+    ('Rogue', 'A scoundrel who uses stealth and trickery to overcome obstacles and enemies.', 'd8', 'DEX', 'INT'),
+    ('Sorcerer', 'A spellcaster who draws on inherent magic from a gift or bloodline.', 'd6', 'CON', 'CHA'),
+    ('Warlock', 'A wielder of magic that is derived from a bargain with an extraplanar entity.', 'd8', 'WIS', 'CHA'),
+    ('Wizard', 'A scholarly magic-user capable of manipulating the structures of reality.', 'd6', 'INT', 'WIS');
+
+
 
 INSERT INTO Skills (skillName) 
 VALUES
