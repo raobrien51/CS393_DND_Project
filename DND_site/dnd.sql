@@ -101,7 +101,7 @@ Create TABLE Spell(
     spell_id INT PRIMARY KEY AUTO_INCREMENT,
     SpellName VARCHAR(30),
     spellLvl INT,
-    descript VARCHAR(1000)
+    School VARCHAR(1000)
 );
 Create TABLE whoCanCast(
     spell_id INT,
@@ -192,7 +192,17 @@ VALUES
     ('Stealth'),
     ('Survival');
 
-
+SELECT Column1, Column2 
+FROM OPENROWSET('Excel 12.0;Database=C:\path\to\your\file.xlsx;HDR=YES', 
+                'SELECT [Column1], [Column2] FROM [Sheet1$]')
+Create TABLE Spell(
+    spell_id INT PRIMARY KEY AUTO_INCREMENT,
+    SpellName VARCHAR(30),
+    spellLvl INT,
+    descript VARCHAR(1000)
+);
+INSERT INTO Skills (skillName) 
+VALUES
 -- SkillsByClass Insert Statements
 INSERT INTO SkillsbyClass (skill_id, className) 
 VALUES
