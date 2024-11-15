@@ -1,0 +1,34 @@
+{% extends "dnd_app/main.html" %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class List</title>
+</head>
+<body>
+    <h1>Class List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Feat ID</th>
+                <th>Feat Name</th>
+                <th>Level Requirement</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for f in Feat %}
+            <tr>
+                <td>{{ f.feat_id }}</td>
+                <td>{{ f.featName }}</td>
+                <td>{{ f.lvlReq }}</td>
+                <td>{{ f.descript }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+{% endblock %}

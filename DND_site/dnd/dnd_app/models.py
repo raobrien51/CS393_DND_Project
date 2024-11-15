@@ -176,6 +176,7 @@ class CurrentSpellsForCharacter(models.Model):
         db_table = "CurrentSpellsForCharacter"
 
 class Feat(models.Model):
+    feat_id = models.AutoField(primary_key=True)
     featName = models.CharField(max_length=50)
     descript = models.TextField()
     lvlReq = models.IntegerField()
