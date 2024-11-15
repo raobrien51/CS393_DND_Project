@@ -85,8 +85,8 @@ CREATE TABLE CharacterByLevel (
 Create TABLE Subclass(
     subclass_id INT PRIMARY KEY AUTO_INCREMENT,
     className VARCHAR(10),
-    subclass_name VARCHAR(30),
-    descript VARCHAR(1000),
+    subclass_name VARCHAR(40),
+    descript TEXT,
     FOREIGN KEY (className) REFERENCES Classes(className)
 );
 
@@ -566,7 +566,7 @@ VALUES
     ('Cleric', 1, 'Divine Order', 'You have dedicated yourself to one of the following sacred roles of your choice: Protector. Trained for battle, you gain proficiency with Martial Weapons and training with Heavy Armor. Thaumaturge. You know one extra cantrip from the Cleric spell list. In addition, your mystical connection to the divine gives you a bonus to your Intelligence (Arcana or Religion) checks. The bonus equals your Wisdom modifier (minimum of +1).'),
     ('Cleric', 1, 'Spellcasting', 'You have learned to cast spells through prayer and meditation. You know three cantrips of your choice from the Cleric spell list. Whenever you gain a Cleric level, you can replace one of your cantrips with another cantrip of your choice from the Cleric spell list. When you reach Cleric levels 4 and 10, you learn another cantrip of your choice from the Cleric spell list.'),
     ('Cleric', 2, 'Channel Divinity', 'You can channel divine energy directly from the Outer Planes to fuel magical effects. You start with two such effects: Divine Spark and Turn Undead. You can use this class’s Channel Divinity twice. You regain one of its expended uses when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest.'),
-    ('Cleric', 3, 'Cleric Subclass', 'You gain a Cleric subclass of your choice: Life Domain, Light Domain, Trickery Domain, War Domain, Forge Domain, Order Domain, Peace Domain, Twilight Domain.'),
+    ('Cleric', 3, 'Cleric Subclass', 'You gain a Cleric subclass of your choice: Life Domain, Light Domain, Trickery Domain'),
     ('Cleric', 4, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
     ('Cleric', 5, 'Sear Undead', 'Whenever you use Turn Undead, you can roll a number of d8s equal to your Wisdom modifier (minimum of 1d8) and add the rolls together. Each Undead that fails its saving throw against that use of Turn Undead takes Radiant damage equal to the roll’s total. This damage doesn’t end the turn effect.'),
     ('Cleric', 6, 'Subclass Feature', 'You gain an additional feature from your chosen Cleric subclass.'),
@@ -593,7 +593,7 @@ VALUES
     ('Druid', 1, 'Spellcasting', 'As a Druid, you learn to cast spells using natures mystical forces. You start with two cantrips and can replace one with another at each level. At levels 4 and 10, you gain an additional cantrip. You prepare spells from the Druid list, increasing your options as you level up. You regain spell slots after a Long Rest and can change your prepared spells after resting. Wisdom is your spellcasting ability, and you can use a Druidic Focus to cast your spells.'),
     ('Druid', 2, 'Wild Companion', 'You can summon a nature spirit that assumes an animal form to aid you. As a Magic action, you can expend a spell slot or a use of Wild Shape to cast the Find Familiar spell without Material components. When you cast the spell in this way, the familiar is a Fey and disappears when you finish a Long Rest.'),
     ('Druid', 2, 'Wild Shape', 'The power of nature allows you to assume the form of an animal. As a Bonus Action, you shape-shift into a Beast form that you have learned for this feature (see “Known Forms” below). You stay in that form for a number of hours equal to half your Druid level or until you use Wild Shape again, have the Incapacitated condition, or die. You can also leave the form early as a Bonus Action. Number of Uses. You can use Wild Shape twice. You regain one expended use when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest. You gain additional uses when you reach certain Druid levels, as shown in the Wild Shape column of the Druid table. Known Forms. You know four Beast forms for this feature, chosen from among Beast stat blocks that have a maximum Challenge Rating of 1/4 and that lack a Fly Speed. Rat, Riding Horse, Spider, and Wolf are recommended. Whenever you finish a Long Rest, you can replace one of your known forms with another eligible form. When you gain certain Druid levels, the number of known forms and the maximum Challenge Rating for those forms increases, as shown in the Beast Shapes table. In addition, starting at level 8, you can adopt a form that has a Fly Speed. When choosing a new form, you may look in the Monster Manual or elsewhere for eligible Beasts if the DM permits you to do so.'),
-    ('Druid', 3, 'Druid Subclass', 'You gain a Druid subclass of your choice: Circle of the Land, Circle of the Moon, Circle of the Sea, Circle of Stars, Circle of Dreams (Non-Playtest), Circle of the Shepard (Non-Playtest), Circle of Spores (Non-Playtest), Circle of Wildfire (Non-Playtest).'),
+    ('Druid', 3, 'Druid Subclass', 'You gain a Druid subclass of your choice: Circle of the Land, Circle of the Moon, Circle of the Sea, Circle of Stars'),
     ('Druid', 4, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
     ('Druid', 5, 'Wild Resurgence', 'Once on each of your turns, if you have no uses of Wild Shape left, you can give yourself one use by expending a spell slot (no action required). In addition, you can expend one use of Wild Shape (no action required) to give yourself a 1st-level spell slot, and you can’t do so again until you finish a Long Rest.'),
     ('Druid', 6, 'Subclass Feature', '-'),
@@ -677,7 +677,7 @@ VALUES
 ('Paladin', 2, 'Fighting Style', 'You gain one Fighting Style feat of your choice or Blessed Warrior to learn Cleric cantrips.'),
 ('Paladin', 2, 'Paladin’s Smite', 'You always have the Divine Smite spell prepared and can cast it once without expending a spell slot.'),
 ('Paladin', 3, 'Channel Divinity', 'You can channel divine energy from the Outer Planes to fuel magical effects, starting with Divine Sense.'),
-('Paladin', 3, 'Paladin Subclass', 'You gain a Paladin subclass of your choice (Devotion, Glory, etc.) and subclass features at this level.'),
+('Paladin', 3, 'Paladin Subclass', 'You gain a Paladin subclass of your choice and subclass features at this level.'),
 ('Paladin', 4, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
 ('Paladin', 5, 'Extra Attack', 'You can attack twice, instead of once, whenever you take the Attack action on your turn.'),
 ('Paladin', 5, 'Faithful Steed', 'You can call on an otherworldly steed with the Find Steed spell, which you can cast once per Long Rest without expending a spell slot.'),
@@ -707,7 +707,7 @@ VALUES
 
     ('Ranger', 2, 'Fighting Style', 'You gain a Fighting Style feat of your choice. Instead of choosing one of those feats, you can choose the option below: Druidic Warrior. You learn two Druid cantrips of your choice. Guidance and Starry Wisp are recommended. The chosen cantrips count as Ranger spells for you, and Wisdom is your spellcasting ability for them. Whenever you gain a Ranger level, you can replace one of these cantrips with another Druid cantrip.'),
 
-    ('Ranger', 3, 'Ranger Subclass', 'You gain a Ranger subclass of your choice: Beast Master, Fey Wanderer, Gloom Stalker, Hunter, Horizon Walker (Non-Playtest), Monster Slayer (Non-Playtest), Swarmkeeper (Non-Playtest), Drakewarden (Non-Playtest). Subclasses are detailed after this class’s description. A subclass is a specialization that grants you special abilities at certain Ranger levels. For the rest of your career, you gain each of your subclass’s features that are of your Ranger level and lower. There are non-playtest subclasses that can be used, please check with your DM before using one.'),
+    ('Ranger', 3, 'Ranger Subclass', 'You gain a Ranger subclass of your choice: Beast Master, Fey Wanderer, Gloom Stalker, Hunter'),
 
     ('Ranger', 4, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify. As shown on the Ranger table, you gain this feature again at levels 8, 12, 16.'),
     ('Ranger', 8, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify. As shown on the Ranger table, you gain this feature again at levels 8, 12, 16.'),
@@ -745,7 +745,7 @@ VALUES
     ('Rogue', 1, 'Thieves Cant', 'You know Thieves Cant and one other language of your choice from the language tables.'),
     ('Rogue', 1, 'Weapon Mastery', 'You can use the Mastery property of two kinds of weapons of your choice with which you have proficiency.'),
     ('Rogue', 2, 'Cunning Action', 'On your turn, you can take one of the following actions as a Bonus Action: Dash, Disengage or Hide.'),
-    ('Rogue', 3, 'Rogue Subclass', 'At 3rd level, you gain a Rogue subclass of your choice (e.g., Arcane Trickster, Assassin). Subclasses grant unique features that enhance your Rogue abilities.'),
+    ('Rogue', 3, 'Rogue Subclass', 'At 3rd level, you gain a Rogue subclass of your choice. Subclasses grant unique features that enhance your Rogue abilities.'),
     ('Rogue', 3, 'Steady Aim', 'As a Bonus Action, you give yourself Advantage on your next attack roll on the current turn. You can use this feature only if you haven’t moved during this turn, and after you use it, your Speed is 0 until the end of the current turn.'),
     ('Rogue', 4, 'Ability Score Improvement', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
     ('Rogue', 5, 'Cunning Strike', 'You can add Cunning Strike effects to your Sneak Attack, including Poison, Trip, or Withdraw, with associated die costs.'),
@@ -807,7 +807,7 @@ VALUES
     ('Warlock', 1, 'ELDRITCH INVOCATIONS', 'You have unearthed Eldritch Invocations, pieces of forbidden knowledge that imbue you with an abiding magical ability or other lessons. You gain one invocation of your choice. If an invocation has a prerequisite, you must meet it to learn that invocation. Whenever you gain a Warlock level, you can replace one of your invocations with another one for which you qualify. You cant replace an invocation if its a prerequisite for another invocation that you have.'),
     ('Warlock', 1, 'PACT MAGIC', 'Through occult ceremony, you have formed a pact with a mysterious entity to gain magical powers. The entity is a voice in the shadows—its identity unclear—but its boon to you is concrete: the ability to cast spells. You know two Warlock cantrips of your choice, such as Eldritch Blast and Prestidigitation. You gain additional cantrips and spells as you gain levels. You regain all expended Pact Magic spell slots when you finish a Short Rest or Long Rest.'),
     ('Warlock', 2, 'MAGICAL CUNNING', 'You can perform an esoteric rite for 1 minute. At the end of it, you regain expended Pact Magic spell slots but no more than a number equal to half your maximum (round up). Once you use this feature, you cant do so again until you finish a Long Rest.'),
-    ('Warlock', 3, 'WARLOCK SUBCLASS', 'You gain a Warlock subclass of your choice: Archfey Patron, Celestial Patron, Fiend Patron, Great Old One Patron, Fathomless (Non-Playtest), Genie (Non-Playtest), Hexblade (Non-Playtest), or The Undead (Non-Playtest).'),
+    ('Warlock', 3, 'WARLOCK SUBCLASS', 'You gain a Warlock subclass of your choice: Archfey Patron, Celestial Patron, Fiend Patron, Great Old One Patron.'),
     ('Warlock', 4, 'ABILITY SCORE IMPROVEMENT', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify. You gain this feature again at levels 8, 12, 16, and 19.'),
     ('Warlock', 5, '-', '-'),
     ('Warlock', 7, '-', '-'),
@@ -831,7 +831,7 @@ VALUES
     ('Wizard', 1, 'RITUAL ADEPT', 'You can cast any spell with the Ritual tag that is in your spellbook as a Ritual without needing it prepared, but you must read from the book to cast it.'),
     ('Wizard', 1, 'ARCANE RECOVERY', 'When you finish a Short Rest, you can recover expended spell slots of a combined level equal to or less than half your Wizard level.'),
     ('Wizard', 2, 'SCHOLAR', 'Choose one skill in which you have proficiency: Arcana, History, Investigation, Medicine, Nature, or Religion. You gain Expertise in that skill.'),
-    ('Wizard', 3, 'WIZARD SUBCLASS', 'You gain a Wizard subclass of your choice, such as Abjurer, Diviner, Evoker, Illusionist, Bladesinger (Non-Playtest), Order of Scribes (Non-Playtest), or War Magic (Non-Playtest).'),
+    ('Wizard', 3, 'WIZARD SUBCLASS', 'You gain a Wizard subclass of your choice, such as Abjurer, Diviner, Evoker, Illusionist.'),
     ('Wizard', 4, 'ABILITY SCORE IMPROVEMENT', 'You gain the Ability Score Improvement feat or another feat of your choice for which you qualify.'),
     ('Wizard', 5, 'MEMORIZE SPELL', 'Whenever you finish a Short Rest, you can replace one of the level 1+ spells you have prepared with another spell from your spellbook.'),
     ('Wizard', 18, 'SPELL MASTERY', 'Choose one level 1 spell and one level 2 spell from your spellbook that have a casting time of an action. You can cast them at will without expending a spell slot. You can replace one of them when you finish a Long Rest.'),
@@ -850,7 +850,71 @@ VALUES
     ('Wizard', 15, '-', '-'),
     ('Wizard', 17, '-', '-');
 
-
+INSERT INTO Subclass (className, subclass_name, descript) 
+VALUES
+    ('Artificer', 'Artillerist', 'The Artillerist specializes in explosive magic and crafting powerful artillery devices.'),
+    ('Artificer', 'Alchemist', 'The Alchemist crafts potions and elixirs, using magic to manipulate the essence of life and death.'),
+    ('Artificer', 'Armorer', 'The Armorer combines magic and engineering to create powerful suits of armor that grant supernatural abilities.'),
+    
+    ('Barbarian', 'Path of the Berserker', 'The Berserker gains strength and fury in battle, focusing on reckless attacks and unyielding rage.'),
+    ('Barbarian', 'Path of the Wild Heart', 'The Wild Heart channels the untamed spirit of nature, gaining primal abilities and a connection to animals.'),
+    ('Barbarian', 'Path of the World Tree', 'The World Tree grants connection to the spiritual realms, embodying the wisdom of the natural world.'),
+    ('Barbarian', 'Path of the Zealot', 'The Zealot’s fury is driven by divine inspiration, allowing for destructive power fueled by divine rage.'),
+    
+    ('Bard', 'College of Dance', 'The College of Dance uses the art of movement to inspire, confuse, and dazzle allies and foes alike.'),
+    ('Bard', 'College of Glamour', 'The College of Glamour specializes in enchanting others with mesmerizing performances and charisma.'),
+    ('Bard', 'College of Lore', 'The College of Lore is focused on learning and knowledge, giving the Bard magical abilities and a broad repertoire of spells.'),
+    ('Bard', 'College of Valor', 'The College of Valor focuses on battle prowess and inspiring others to perform heroic feats in combat.'),
+    
+    ('Cleric', 'Life Domain', 'The Life Domain is dedicated to healing and protecting others, channeling divine energy to sustain life.'),
+    ('Cleric', 'Light Domain', 'The Light Domain focuses on radiant power to dispel darkness and protect others through holy fire.'),
+    ('Cleric', 'Trickery Domain', 'The Trickery Domain embraces deception and misdirection, manipulating illusions and the minds of others.'),
+    ('Cleric', 'War Domain', 'The War Domain is focused on combat, channeling divine power to aid in battle and protect others.'),
+    
+    ('Druid', 'Circle of the Land', 'The Circle of the Land offers an intimate connection with nature, enhancing elemental magic.'),
+    ('Druid', 'Circle of the Moon', 'The Circle of the Moon allows Druids to transform into powerful beasts with enhanced physical abilities.'),
+    ('Druid', 'Circle of the Sea', 'The Circle of the Sea attunes the Druid to the water’s power, gaining the ability to control tides and storms.'),
+    ('Druid', 'Circle of the Stars', 'The Circle of the Stars connects the Druid to celestial power, guiding them to control star magic.'),
+    
+    ('Fighter', 'Battle Master', 'The Battle Master specializes in tactical combat, using maneuvers to control the battlefield.'),
+    ('Fighter', 'Champion', 'The Champion is a master of physical prowess, excelling in brute strength and endurance.'),
+    ('Fighter', 'Psi Warrior', 'The Psi Warrior blends martial skills with psionic powers, controlling the mind and body in combat.'),
+    ('Fighter', 'Eldritch Knight', 'The Eldritch Knight combines magic and weaponry, casting spells while fighting with a sword or other weapon.'),
+    
+    ('Monk', 'Warrior of Mercy', 'The Warrior of Mercy focuses on unarmed combat and healing, using strikes that cripple enemies and restore allies.'),
+    ('Monk', 'Warrior of Shadow', 'The Warrior of Shadow gains stealth and shadow manipulation abilities, striking from the darkness with precision.'),
+    ('Monk', 'Warrior of Elements', 'The Warrior of Elements harnesses the power of the natural elements to enhance their martial abilities.'),
+    ('Monk', 'Warrior of Open Hand', 'The Warrior of Open Hand focuses on perfecting unarmed combat, using disciplined martial arts to control foes.'),
+    
+    ('Paladin', 'Oath of Devotion', 'The Oath of Devotion represents purity and honor, pledging to protect others from evil and injustice.'),
+    ('Paladin', 'Oath of Glory', 'The Oath of Glory focuses on achieving personal excellence and inspiring others to greatness.'),
+    ('Paladin', 'Oath of Ancients', 'The Oath of Ancients is sworn to protect the forces of nature and light from corruption.'),
+    ('Paladin', 'Oath of Vengeance', 'The Oath of Vengeance is taken by those seeking retribution, dedicating their power to punishing wrongdoers.'),
+    
+    ('Ranger', 'Beast Master', 'The Beast Master forms a bond with a powerful animal companion, fighting side by side in battle.'),
+    ('Ranger', 'Fey Wanderer', 'The Fey Wanderer is attuned to the Feywild, gaining magical powers to manipulate fey energy.'),
+    ('Ranger', 'Gloom Stalker', 'The Gloom Stalker specializes in stealth and ambush, manipulating darkness to move unseen and strike swiftly.'),
+    ('Ranger', 'Hunter', 'The Hunter excels at fighting particular enemies, honing skills to track and neutralize their foes.'),
+    
+    ('Rogue', 'Arcane Trickster', 'The Arcane Trickster blends magic and stealth, using spells to deceive, disarm, and confound enemies.'),
+    ('Rogue', 'Assassin', 'The Assassin excels at dealing deadly strikes, using deception and stealth to eliminate enemies.'),
+    ('Rogue', 'Soulknife', 'The Soulknife manifests psionic blades, enhancing their combat abilities with mental power and skill.'),
+    ('Rogue', 'Thief', 'The Thief specializes in quick movements, stealing and using tools to break into places and steal valuable items.'),
+    
+    ('Sorcerer', 'Aberrant', 'The Aberrant sorcerer draws on alien and incomprehensible powers, manifesting strange and chaotic magic.'),
+    ('Sorcerer', 'Clockwork', 'The Clockwork sorcerer channels the precision and order of clockwork mechanisms into their magical abilities.'),
+    ('Sorcerer', 'Draconic', 'The Draconic sorcerer has inherited the power of dragons, gaining abilities tied to elemental force.'),
+    ('Sorcerer', 'Wild Magic', 'The Wild Magic sorcerer taps into the unpredictable forces of magic, unleashing chaos and randomness.'),
+    
+    ('Warlock', 'Celestial', 'The Celestial patron is a divine being who grants light and healing powers to the Warlock.'),
+    ('Warlock', 'Fiend', 'The Fiend patron provides power at a steep cost, often demanding that their Warlock commit evil acts for power.'),
+    ('Warlock', 'Archfey', 'The Archfey patron grants unpredictable and beguiling powers that bend the will of others to your control.'),
+    ('Warlock', 'Great Old One', 'The Great Old One patron grants mind-bending psychic abilities, tied to the cosmic horrors of the deep.'),
+    
+    ('Wizard', 'Abjurer', 'The Abjurer is focused on protective and defensive magic, excelling at warding against harmful magic.'),
+    ('Wizard', 'Diviner', 'The Diviner specializes in the magic of foresight, allowing them to predict and influence the future.'),
+    ('Wizard', 'Evoker', 'The Evoker specializes in elemental magic, creating destructive spells that deal massive damage.'),
+    ('Wizard', 'Illusionist', 'The Illusionist specializes in creating false images and illusions to confuse and deceive their enemies.');
 
 
 
