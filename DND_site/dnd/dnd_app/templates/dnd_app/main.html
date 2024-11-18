@@ -18,13 +18,15 @@
                 <li><a href="{% url 'character_list' %}">Characters</a></li>
                 <li><a href="{% url 'classes' %}">Classes</a></li>
                 <li><a href="{% url 'feat' %}">Feats</a></li>
+                <li><a href="{% url 'spell' %}">Spells</a></li>
+                <li><a href="{% url 'race' %}">Race</a></li>
             </ul>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
             {% block content %}
-            Welcome to the United States Military Academy's Academy Management System.
+            Create Your Character
             {% endblock %}
         </main>
     </div>

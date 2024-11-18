@@ -1,0 +1,37 @@
+{% extends "dnd_app/main.html" %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spells</title>
+</head>
+<body>
+    <h1>Spells</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Spell ID</th>
+                <th>Spell Name</th>
+                <th>Level</th>
+                <th>School</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in Spell %}
+            <tr>
+                <td>{{ s.spell_id }}</td>
+                <td>{{ s.SpellName }}</td>
+                <td>{{ s.spellLvl }}</td>
+                <td>{{ s.school }}</td>
+                <td>{{ s.descript }}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+{% endblock %}

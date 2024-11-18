@@ -1,0 +1,37 @@
+{% extends "dnd_app/main.html" %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Races</title>
+</head>
+<body>
+    <h1>Races</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Race ID</th>
+                <th>Race</th>
+                <th>Speed</th>
+                <th>Size</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in Race %}
+            <tr>
+                <td>{{ r.race_id }}</td>
+                <td>{{ r.race_name }}</td>
+                <td>{{ r.speed }}</td>
+                <td>{{ r.size }}</td>
+                <td>{{ r.descript }}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+{% endblock %}

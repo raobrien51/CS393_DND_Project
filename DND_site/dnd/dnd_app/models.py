@@ -145,9 +145,12 @@ class SubclassByLvl(models.Model):
         db_table = "SubclassByLvl"
 
 class Spell(models.Model):
+    spell_id = models.AutoField(primary_key=True)
     SpellName = models.CharField(max_length=30)
     spellLvl = models.IntegerField()
-    descript = models.TextField()
+    descript = models.TextField(db_column="description")
+    school = models.CharField(max_length=1000)
+
 
     def __str__(self):
         return self.SpellName
@@ -198,6 +201,7 @@ class CharacterByFeat(models.Model):
         db_table = "CharacterByFeat"
 
 class Race(models.Model):
+    race_id = models.AutoField(primary_key=True)
     race_name = models.CharField(max_length=20)
     descript = models.TextField()
     speed = models.IntegerField()

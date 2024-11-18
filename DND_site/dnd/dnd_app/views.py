@@ -1,7 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Character_Class
-from .models import Classes
-from .models import Feat
+from .models import *
 from django.utils import timezone
 from django.http import Http404
 
@@ -22,6 +20,14 @@ def feat(request):
     data = Feat.objects.all()
     context = {'Feat': data}
     return render(request, "dnd_app/feat.html", context)
+def spell(request):
+    data = Spell.objects.all()
+    context = {'Spell': data}
+    return render(request, "dnd_app/spell.html", context)
+def race(request):
+    data = Race.objects.all()
+    context = {'Race': data}
+    return render(request, "dnd_app/race.html", context)
 
 """def course_list(request):
     data = Course.objects.all()
