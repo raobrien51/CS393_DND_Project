@@ -225,6 +225,7 @@ class AbilityByRace(models.Model):
         db_table = "AbilityByRace"
 
 class Background(models.Model):
+    background_id = models.AutoField(primary_key=True)
     backgroundName = models.CharField(max_length=25)
     abilitiesImprovedOne = models.CharField(max_length=3)
     abilitiesImprovedTwo = models.CharField(max_length=3)

@@ -28,6 +28,10 @@ def race(request):
     data = Race.objects.all()
     context = {'Race': data}
     return render(request, "dnd_app/race.html", context)
+def background(request):
+    data = Background.objects.all()
+    context = {'Background': data}
+    return render(request, "dnd_app/background.html", context)
 
 """def course_list(request):
     data = Course.objects.all()

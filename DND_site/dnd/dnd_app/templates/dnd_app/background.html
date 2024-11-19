@@ -1,0 +1,36 @@
+{% extends "dnd_app/main.html" %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backgrounds</title> 
+</head>
+<body>
+    <h1>Backgrounds</h1> 
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Background ID</th> 
+                <th>Background</th> 
+                <th>Ability Scores</th> 
+                <th>Feat</th> 
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for b in Background %} 
+            <tr>
+                <td>{{ b.background_id }}</td> 
+                <td>{{ b.backgroundName }}</td> 
+                <td>{{ b.abilitiesImprovedOne }}, {{ b.abilitiesImprovedTwo }}, {{ b.abilitiesImprovedThree }}</td> 
+                <td>{{ b.feat.featName }}</td> <!-- Assuming 'name' is a field in your Feat model -->
+                <td>{{ b.descript }}</td> 
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+{% endblock %}
