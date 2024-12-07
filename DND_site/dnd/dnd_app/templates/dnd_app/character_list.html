@@ -2,6 +2,7 @@
 
 {% block content %}
 <h1>Character List</h1>
+<a href="{% url 'add_character' %}">Add New Character</a>
 <table>
     <tr>
         <th>Character ID</th>
@@ -12,17 +13,22 @@
         <th>INTE</th>
         <th>WIS</th>
         <th>CHA</th>
+        <th>Race</th>
+        <th>Background</th>
+
     </tr>
-    {% for student in students %}
+    {% for c in Characters %}
     <tr>
-        <td>{{ character_class.character_id }}</td>
-        <td>{{ character_class.character_name }}</td>
-        <td>{{ character_class.STR}}</td>
-        <td>{{ character_class.DEX}}</td>
-        <td>{{ character_class.CON}}</td>
-        <td>{{ character_class.INTE}}</td>
-        <td>{{ character_class.WIS}}</td>
-        <td>{{ character_class.CHA}}</td>
+        <td>{{ c.character_id }}</td>
+        <td>{{ c.character_name }}</td>
+        <td>{{ c.STR }}</td>
+        <td>{{ c.DEX }}</td>
+        <td>{{ c.CON }}</td>
+        <td>{{ c.INTE }}</td>
+        <td>{{ c.WIS }}</td>
+        <td>{{ c.CHA }}</td>
+        <td>{{ c.race }}</td>
+        <td>{{ c.background }}</td>
     </tr>
     {% endfor %}
 </table>

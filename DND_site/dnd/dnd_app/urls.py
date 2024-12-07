@@ -9,4 +9,6 @@ urlpatterns = [
     path('Spells/', views.spell, name='spell'),
     path('Race/', views.race, name='race'),
     path('Background/', views.background, name='background'),
+    path('character/add/', views.add_character, name='add_character'),
+    path('add_spell',views.add_spell,name = 'add_spell'),
 ]

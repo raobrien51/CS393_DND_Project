@@ -3,6 +3,7 @@ from django.db import models
 from django.db import models
 
 class Character_Class(models.Model):
+    character_id = models.AutoField(primary_key=True)
     character_name = models.CharField(max_length=255)
     STR = models.IntegerField()
     DEX = models.IntegerField()
@@ -11,7 +12,12 @@ class Character_Class(models.Model):
     WIS = models.IntegerField()
     CHA = models.IntegerField()
     race = models.ForeignKey('Race', on_delete=models.SET_NULL, null=True)
-    background = models.ForeignKey('Background', on_delete=models.SET_NULL, null=True)
+    background = models.ForeignKey(
+    'Background',
+    on_delete=models.SET_NULL,
+    null=True,
+    db_column='background'
+)
 
     def __str__(self):
         return f"{self.character_name}"
@@ -234,7 +240,6 @@ class Background(models.Model):
     feat = models.ForeignKey(Feat, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Background - {self.abilitiesImprovedOne}, {self.abilitiesImprovedTwo}, {self.abilitiesImprovedThree}"
-
+        return f"{self.backgroundName}"
     class Meta:
         db_table = "Background"

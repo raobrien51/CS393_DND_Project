@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
+from .forms import *
 from django.utils import timezone
 from django.http import Http404
 
@@ -32,6 +33,24 @@ def background(request):
     data = Background.objects.all()
     context = {'Background': data}
     return render(request, "dnd_app/background.html", context)
+def add_character(request):
+    if request.method == 'POST':
+        form = CharacterForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = CharacterForm()
+    return render(request, 'dnd_app/add_character.html', {'form': form})
+def add_spell(request):
+    if request.method == 'POST':
+        form = SpellForm(request.POST)
+        if form.is_valid():
+            form.save()  #Save the form data to the database
+            return redirect('spell')  #Redirect to a page showing all spells
+    else:
+        form = SpellForm()
+    return render(request, 'dnd_app/add_spell.html', {'form': form})
+ 
 
 """def course_list(request):
     data = Course.objects.all()

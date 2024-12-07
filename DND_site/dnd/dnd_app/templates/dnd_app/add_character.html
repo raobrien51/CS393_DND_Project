@@ -1,0 +1,10 @@
+{% extends "dnd_app/main.html" %}
+
+{% block content %}
+<h1>Add Character</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Character</button>
+</form>
+{% endblock %}
