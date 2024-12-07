@@ -1,0 +1,32 @@
+{% extends "dnd_app/main.html" %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subclasses List</title>
+</head>
+<body>
+    <h1>SubClass List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Subclass Name</th>
+                <th>Class Name</th>
+                <th>Description</th>
+                            </tr>
+        </thead>
+        <tbody>
+            {% for s in Subclasses %}
+            <tr>
+                <td>{{ s.subclass_name }}</td>
+                <td>{{ s.className }}</td>
+                <td>{{ s.descript }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+{% endblock %}

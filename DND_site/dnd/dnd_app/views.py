@@ -68,7 +68,19 @@ def add_spell(request):
         form = SpellForm()
     return render(request, 'dnd_app/add_spell.html', {'form': form})
  
-
+def subclasses(request):
+    data = Subclass.objects.all()
+    context = {'Subclasses': data}
+    return render(request, "dnd_app/subclasses.html", context)
+def create_subclass(request):
+    if request.method == 'POST':
+        form = SubclassForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('subclasses')
+    else:
+        form = SubclassForm()
+    return render(request, 'dnd_app/create_subclass.html', {'form': form})
 """def course_list(request):
     data = Course.objects.all()
     context = {'courses': data}

@@ -11,4 +11,6 @@ urlpatterns = [
     path('Background/', views.background, name='background'),
     path('character/add/', views.add_character, name='add_character'),
     path('add_spell',views.add_spell,name = 'add_spell'),
+    path('create_subclass',views.create_subclass,name = 'create_subclass'),
+    path('subclasses',views.subclasses,name = 'subclasses'),
 ]

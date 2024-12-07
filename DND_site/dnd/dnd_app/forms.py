@@ -25,3 +25,12 @@ class SpellForm(forms.ModelForm):
             'description': forms.Textarea(attrs={'rows': 3, 'cols': 40}),
            
         }
+
+class SubclassForm(forms.ModelForm):
+    class Meta:
+        model = Subclass
+        fields = ['className','subclass_name','descript']
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 3, 'cols': 40}),
+           
+        }

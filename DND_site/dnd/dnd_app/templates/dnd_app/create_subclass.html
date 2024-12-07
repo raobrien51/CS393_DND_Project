@@ -1,0 +1,17 @@
+{% extends "dnd_app/main.html" %}
+
+{% block content %}
+<html>
+<head>
+    <title>Create Subclass</title>
+</head>
+<body>
+    <h1>Create a Subclass</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+{% endblock %}
