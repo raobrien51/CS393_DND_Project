@@ -6,6 +6,16 @@ class CharacterForm(forms.ModelForm):
     class Meta:
         model = Character_Class
         fields = ['character_name', 'STR', 'DEX', 'CON', 'INTE', 'WIS', 'CHA', 'race', 'background']
+    character_class = forms.ModelChoiceField(
+    queryset=Classes.objects.all(),
+    required=True,
+    label="Class"
+    )
+    subclass = forms.ModelChoiceField(
+        queryset=Subclass.objects.all(),
+        required=True,
+        label="Subclass"
+    )
 
 class SpellForm(forms.ModelForm):
     class Meta:

@@ -9,9 +9,14 @@ def index(request):
     return render(request, "dnd_app/main.html")
 
 def character_list(request):
-    data = Character_Class.objects.all()
-    context = {'Characters': data}
+    characters = Character_Class.objects.all()
+    character_classes = CharacterByClassAndSubclass.objects.all()
+    context = {
+        'Characters': characters,
+        'CharacterClasses': character_classes,
+    }
     return render(request, "dnd_app/character_list.html", context)
+
 
 def classes(request):
     data = Classes.objects.all()
@@ -37,9 +42,21 @@ def add_character(request):
     if request.method == 'POST':
         form = CharacterForm(request.POST)
         if form.is_valid():
-            form.save()
+            character = form.save()
+            selected_class = form.cleaned_data.get('character_class')
+            selected_subclass = form.cleaned_data.get('subclass')
+
+            if selected_class and selected_subclass:
+                CharacterByClassAndSubclass.objects.create(
+                    character=character,
+                    character_class=selected_class,
+                    subclass=selected_subclass,
+                )
+
+            return redirect('character_list')
     else:
         form = CharacterForm()
+    
     return render(request, 'dnd_app/add_character.html', {'form': form})
 def add_spell(request):
     if request.method == 'POST':

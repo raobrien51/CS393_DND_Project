@@ -15,7 +15,8 @@
         <th>CHA</th>
         <th>Race</th>
         <th>Background</th>
-
+        <th>Class</th>
+        <th>Subclass</th>
     </tr>
     {% for c in Characters %}
     <tr>
@@ -29,6 +30,20 @@
         <td>{{ c.CHA }}</td>
         <td>{{ c.race }}</td>
         <td>{{ c.background }}</td>
+        <td>
+            {% for cc in CharacterClasses %}
+                {% if cc.character == c %}
+                    {{ cc.character_class }}
+                {% endif %}
+            {% endfor %}
+        </td>
+        <td>
+            {% for cc in CharacterClasses %}
+                {% if cc.character == c %}
+                    {{ cc.subclass }}
+                {% endif %}
+            {% endfor %}
+        </td>
     </tr>
     {% endfor %}
 </table>

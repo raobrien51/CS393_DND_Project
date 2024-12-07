@@ -12,12 +12,7 @@ class Character_Class(models.Model):
     WIS = models.IntegerField()
     CHA = models.IntegerField()
     race = models.ForeignKey('Race', on_delete=models.SET_NULL, null=True)
-    background = models.ForeignKey(
-    'Background',
-    on_delete=models.SET_NULL,
-    null=True,
-    db_column='background'
-)
+    background = models.ForeignKey('Background', on_delete=models.SET_NULL, null=True, db_column='background')
 
     def __str__(self):
         return f"{self.character_name}"
@@ -106,6 +101,7 @@ class ClassByLvl(models.Model):
     class Meta:
         db_table = "ClassByLvl"
 
+
 class CharacterByLevel(models.Model):
     character = models.ForeignKey(Character_Class, on_delete=models.CASCADE)
     className = models.ForeignKey(Classes, on_delete=models.CASCADE)
@@ -129,7 +125,12 @@ class CharacterByLevel(models.Model):
         db_table = "CharacterByLevel"
 
 class Subclass(models.Model):
-    className = models.ForeignKey(Classes, on_delete=models.CASCADE)
+    subclass_id = models.AutoField(primary_key=True)
+    className = models.ForeignKey(
+        Classes, 
+        on_delete=models.CASCADE, 
+        db_column='className'
+    )
     subclass_name = models.CharField(max_length=30)
     descript = models.TextField()
 
@@ -149,6 +150,19 @@ class SubclassByLvl(models.Model):
 
     class Meta:
         db_table = "SubclassByLvl"
+
+class CharacterByClassAndSubclass(models.Model):
+    character = models.ForeignKey(Character_Class, on_delete=models.CASCADE)
+    character_class = models.ForeignKey(Classes, 
+        on_delete=models.CASCADE, 
+        db_column='className'
+    )
+    subclass = models.ForeignKey(Subclass, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.character.character_name} - {self.character_class} - {self.subclass}"
+    class Meta:
+        db_table = "CharacterByClassAndSubclass"
 
 class Spell(models.Model):
     spell_id = models.AutoField(primary_key=True)
