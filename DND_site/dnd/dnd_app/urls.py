@@ -13,4 +13,6 @@ urlpatterns = [
     path('add_spell',views.add_spell,name = 'add_spell'),
     path('create_subclass',views.create_subclass,name = 'create_subclass'),
     path('subclasses',views.subclasses,name = 'subclasses'),
+    path('party/create/', views.create_party, name='create_party'),
+    path('party/list/', views.party_list, name='party_list'),
 ]

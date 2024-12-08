@@ -34,3 +34,15 @@ class SubclassForm(forms.ModelForm):
             'description': forms.Textarea(attrs={'rows': 3, 'cols': 40}),
            
         }
+
+class PartyForm(forms.ModelForm):
+    members = forms.ModelMultipleChoiceField(
+        queryset=Character_Class.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=True,
+        label="Select Party Members"
+    )
+
+    class Meta:
+        model = Party
+        fields = ['name', 'members']

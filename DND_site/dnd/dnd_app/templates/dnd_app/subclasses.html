@@ -8,13 +8,25 @@
 </head>
 <body>
     <h1>SubClass List</h1>
+    <form method="get" action="">
+        <label for="class">Sort by Class:</label>
+        <select id="class" name="class" onchange="this.form.submit()">
+            <option value="">All Classes</option>
+            {% for class in Classes %}
+            <option value="{{ class }}" {% if class == request.GET.class %}selected{% endif %}>
+                {{ class }}
+            </option>
+            {% endfor %}
+        </select>
+    </form>
+
     <table border="1">
         <thead>
             <tr>
                 <th>Subclass Name</th>
                 <th>Class Name</th>
                 <th>Description</th>
-                            </tr>
+            </tr>
         </thead>
         <tbody>
             {% for s in Subclasses %}
@@ -28,5 +40,4 @@
     </table>
 </body>
 </html>
-
 {% endblock %}

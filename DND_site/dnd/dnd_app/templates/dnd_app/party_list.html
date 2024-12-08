@@ -1,0 +1,18 @@
+{% extends "dnd_app/main.html" %}
+
+{% block content %}
+<h1>Party List</h1>
+<ul>
+    {% for party in parties %}
+    <li>
+        <strong>{{ party.name }}</strong>
+        <ul>
+            {% for member in party.members.all %}
+            <li>{{ member.character_name }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'create_party' %}">Create New Party</a>
+{% endblock %}

@@ -23,17 +23,50 @@ def classes(request):
     context = {'Classes': data}
     return render(request, "dnd_app/classes.html", context)
 def feat(request):
-    data = Feat.objects.all()
-    context = {'Feat': data}
+    level = request.GET.get('level')  
+    feats = Feat.objects.all()
+
+    if level:
+        feats = feats.filter(lvlReq=level)  
+
+    context = {
+        'Feat': feats,
+        'Levels': Feat.objects.values_list('lvlReq', flat=True).distinct(),  
+    }
     return render(request, "dnd_app/feat.html", context)
+
 def spell(request):
-    data = Spell.objects.all()
-    context = {'Spell': data}
+    level = request.GET.get('level')
+    school = request.GET.get('school') 
+
+    spells = Spell.objects.all()
+
+    if level:
+        spells = spells.filter(spellLvl=level)
+    if school:
+        spells = spells.filter(school=school) 
+
+    context = {
+        'Spell': spells,
+        'Levels': Spell.objects.values_list('spellLvl', flat=True).distinct(),
+        'Schools': Spell.objects.values_list('school', flat=True).distinct(), 
+    }
     return render(request, "dnd_app/spell.html", context)
+
 def race(request):
-    data = Race.objects.all()
-    context = {'Race': data}
+    races = Race.objects.all()
+
+    abilities_by_race = {}
+    for race in races:
+        abilities = AbilityByRace.objects.filter(race=race)
+        abilities_by_race[race.race_id] = abilities
+
+    context = {
+        'Race': races,
+        'AbilitiesByRace': abilities_by_race
+    }
     return render(request, "dnd_app/race.html", context)
+
 def background(request):
     data = Background.objects.all()
     context = {'Background': data}
@@ -69,9 +102,18 @@ def add_spell(request):
     return render(request, 'dnd_app/add_spell.html', {'form': form})
  
 def subclasses(request):
-    data = Subclass.objects.all()
-    context = {'Subclasses': data}
+    selected_class = request.GET.get('class')  # Get the selected class from the query string
+
+    subclasses = Subclass.objects.all()
+    if selected_class:
+        subclasses = subclasses.filter(className__className=selected_class)  # Filter by class name
+
+    context = {
+        'Subclasses': subclasses,
+        'Classes': Classes.objects.values_list('className', flat=True).distinct(),  # Get unique class names
+    }
     return render(request, "dnd_app/subclasses.html", context)
+
 def create_subclass(request):
     if request.method == 'POST':
         form = SubclassForm(request.POST)
@@ -81,51 +123,19 @@ def create_subclass(request):
     else:
         form = SubclassForm()
     return render(request, 'dnd_app/create_subclass.html', {'form': form})
-"""def course_list(request):
-    data = Course.objects.all()
-    context = {'courses': data}
-    return render(request, "school_app/course_list.html", context)
 
-def course_detail(request, course_id, message=None):
-    course = get_object_or_404(Course, course_id=course_id)
-    enrolled_students = course.students.all()  # Accessing related students
+def create_party(request):
+    if request.method == 'POST':
+        party_name = request.POST.get('party_name')
+        member_ids = request.POST.getlist('members')
 
-    return render(request, 'school_app/course_detail.html', {
-        'course': course,
-        'enrolled_students': enrolled_students,
-        'message': message,
-    })
+        if party_name and member_ids:
+            party = Party.objects.create(name=party_name)
+            party.members.add(*member_ids)
+            return redirect('party_list')
+    return redirect('character_list')
 
-def student_list(request):
-    data = Student.objects.all()
-    context= {"students": data}
-    return render(request, 'school_app/student_list.html', context)
 
-def enroll_student(request):
-    if request.method == "POST":
-        form = EnrollmentForm(request.POST)
-
-        if form.is_valid():
-            student = get_object_or_404(Student, student_id=form.cleaned_data["student_id"])
-            course = get_object_or_404(Course, course_id=form.cleaned_data["course_id"])
-            
-            # Check if enrollment already exists
-            enrollment, created = Enrollment.objects.get_or_create(
-                student=student,
-                course=course,
-                defaults={'enrollment_date': timezone.now()}
-            )
-
-            if created:
-                message = f"{student.first_name} has been enrolled in {course.course_name}."
-            else:
-                message = f"{student.first_name} is already enrolled in {course.course_name}."
-
-            print(message)
-
-            return redirect('course_detail', course_id=course.course_id)
-        else:
-            return redirect('enroll_student')
-    else:
-        form = EnrollmentForm()
-        return render(request, "school_app/enrollment_form.html", {"form": form})"""
+def party_list(request):
+    parties = Party.objects.all()
+    return render(request, 'dnd_app/party_list.html', {'parties': parties})

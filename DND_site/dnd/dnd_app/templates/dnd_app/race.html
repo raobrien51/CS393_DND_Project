@@ -5,6 +5,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Races</title>
+    <style>
+        .abilities-row {
+            display: none; /* Initially hidden */
+        }
+    </style>
+    <script>
+        function toggleAbilities(raceId) {
+            const row = document.getElementById(`abilities-${raceId}`);
+            if (row.style.display === 'none') {
+                row.style.display = 'table-row';
+            } else {
+                row.style.display = 'none';
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>Races</h1>
@@ -20,18 +35,28 @@
         </thead>
         <tbody>
             {% for r in Race %}
-            <tr>
+            <tr onclick="toggleAbilities('{{ r.race_id }}')" style="cursor: pointer;">
                 <td>{{ r.race_id }}</td>
                 <td>{{ r.race_name }}</td>
                 <td>{{ r.speed }}</td>
                 <td>{{ r.size }}</td>
                 <td>{{ r.descript }}</td>
-                
+            </tr>
+            <tr id="abilities-{{ r.race_id }}" class="abilities-row">
+                <td colspan="5">
+                    <strong>Abilities:</strong>
+                    <ul>
+                        {% for ability in AbilitiesByRace.race_id %}
+                        <li>Level {{ ability.lvlGainedAt }}: {{ ability.ability }}</li>
+                        {% empty %}
+                        <li>No abilities available for this race.</li>
+                        {% endfor %}
+                    </ul>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </body>
 </html>
-
 {% endblock %}

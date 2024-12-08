@@ -8,6 +8,28 @@
 </head>
 <body>
     <h1>Spells</h1>
+    <form method="get" action="">
+        <label for="level">Filter by Level:</label>
+        <select id="level" name="level" onchange="this.form.submit()">
+            <option value="">All Levels</option>
+            {% for level in Levels %}
+            <option value="{{ level }}" {% if level|stringformat:"d" == request.GET.level %}selected{% endif %}>
+                Level {{ level }}
+            </option>
+            {% endfor %}
+        </select>
+
+        <label for="school">Sort by School:</label>
+        <select id="school" name="school" onchange="this.form.submit()">
+            <option value="">All Schools</option>
+            {% for school in Schools %}
+            <option value="{{ school }}" {% if school == request.GET.school %}selected{% endif %}>
+                {{ school }}
+            </option>
+            {% endfor %}
+        </select>
+    </form>
+
     <table border="1">
         <thead>
             <tr>
@@ -26,12 +48,10 @@
                 <td>{{ s.spellLvl }}</td>
                 <td>{{ s.school }}</td>
                 <td>{{ s.descript }}</td>
-                
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </body>
 </html>
-
 {% endblock %}

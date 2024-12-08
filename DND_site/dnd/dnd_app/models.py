@@ -234,6 +234,7 @@ class Race(models.Model):
         db_table = "Race"
 
 class AbilityByRace(models.Model):
+    id = models.AutoField(primary_key=True)
     race = models.ForeignKey(Race, on_delete=models.CASCADE)
     lvlGainedAt = models.IntegerField(default=1)
     ability = models.TextField()
@@ -257,3 +258,10 @@ class Background(models.Model):
         return f"{self.backgroundName}"
     class Meta:
         db_table = "Background"
+
+class Party(models.Model):
+    name = models.CharField(max_length=50)
+    members = models.ManyToManyField(Character_Class)
+
+    def __str__(self):
+        return self.name

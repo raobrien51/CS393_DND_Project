@@ -8,6 +8,20 @@
 </head>
 <body>
     <h1>Feats</h1>
+
+    <!-- Dropdown Menu for Level Filtering -->
+    <form method="get" action="">
+        <label for="level">Filter by Level Requirement:</label>
+        <select id="level" name="level" onchange="this.form.submit()">
+            <option value="">All Levels</option>
+            {% for level in Levels %}
+            <option value="{{ level }}" {% if level|stringformat:"d" == request.GET.level %}selected{% endif %}>
+                Level {{ level }}
+            </option>
+            {% endfor %}
+        </select>
+    </form>
+
     <table border="1">
         <thead>
             <tr>
@@ -30,5 +44,4 @@
     </table>
 </body>
 </html>
-
 {% endblock %}
